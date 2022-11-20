@@ -124,6 +124,19 @@ function checkWin(){
             break;
         }
     }
+    if (Notification.permission === "granted") 
+                {
+                   const notification = new Notification("YOU WON");
+                }
+                else if (Notification.permission !== "denied") 
+                {
+                    Notification.requestPermission().then((permission) => {
+                        if (permission === "granted") 
+                        {
+                            const notification = new Notification("YOU WON");
+                        }
+                    });
+                }
     if(win){
         let notification = new Notification("YOU WON");
         gameStarted = false;
