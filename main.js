@@ -124,7 +124,11 @@ function checkWin(){
             break;
         }
     }
-    if (Notification.permission === "granted") 
+    
+    if(win){
+        let notification = new Notification("YOU WON");
+        gameStarted = false;
+        if (Notification.permission === "granted") 
                 {
                    const notification = new Notification("YOU WON");
                 }
@@ -137,8 +141,5 @@ function checkWin(){
                         }
                     });
                 }
-    if(win){
-        let notification = new Notification("YOU WON");
-        gameStarted = false;
     }
 }
